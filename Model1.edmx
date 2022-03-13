@@ -1,0 +1,571 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Syrian_Bar_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AGENCY">
+          <Key>
+            <PropertyRef Name="CODE" />
+          </Key>
+          <Property Name="CODE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TYPE" Type="varchar" MaxLength="50" />
+          <Property Name="SERIAL_NUMBER" Type="int" />
+          <Property Name="REG_NUM" Type="int" />
+          <Property Name="ENTRUSTED_NAME_1" Type="varchar" MaxLength="50" />
+          <Property Name="ENTRUSTED_NAME_2" Type="varchar" MaxLength="50" />
+          <Property Name="ENTRUSTED_NAME_3" Type="varchar" MaxLength="50" />
+          <Property Name="ENTRUSTED_NAME_4" Type="varchar" MaxLength="50" />
+          <Property Name="ENTRUSTED_NAME_5" Type="varchar" MaxLength="50" />
+          <Property Name="AGENT_NAME_1" Type="varchar" MaxLength="50" />
+          <Property Name="AGENT_NAME_2" Type="varchar" MaxLength="50" />
+          <Property Name="AGENT_NAME_3" Type="varchar" MaxLength="50" />
+          <Property Name="AGENT_NAME_4" Type="varchar" MaxLength="50" />
+          <Property Name="AGENT_NAME_5" Type="varchar" MaxLength="50" />
+          <Property Name="SALES_MAN" Type="varchar" MaxLength="50" />
+          <Property Name="AGENCY_DATE" Type="date" />
+          <Property Name="IMAGE" Type="image" />
+          <Property Name="STAT" Type="varchar" MaxLength="10" />
+          <Property Name="EDITOR" Type="varchar" MaxLength="50" />
+          <Property Name="UESER_NAME" Type="varchar" MaxLength="50" />
+          <Property Name="TYPE_2" Type="varchar" MaxLength="50" />
+          <Property Name="SECURITY_NO" Type="varchar" MaxLength="50" />
+          <Property Name="DATE_CREATED" Type="datetime" />
+        </EntityType>
+        <EntityType Name="BLOCK_AGENCY">
+          <Key>
+            <PropertyRef Name="NO" />
+          </Key>
+          <Property Name="NO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CODE" Type="varchar" MaxLength="50" />
+          <Property Name="DATE" Type="date" />
+          <Property Name="AGENCY_CODE" Type="varchar" MaxLength="50" />
+          <Property Name="DATE_TODAY" Type="datetime" />
+          <Property Name="USER_NAME" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="CONTRACT_COMPANY">
+          <Key>
+            <PropertyRef Name="CODE" />
+          </Key>
+          <Property Name="CODE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DATE" Type="date" />
+          <Property Name="TYPE" Type="varchar" MaxLength="50" />
+          <Property Name="ENTRUSTED_NAME" Type="varchar" MaxLength="50" />
+          <Property Name="EDITOR" Type="varchar" MaxLength="50" />
+          <Property Name="SALES_MAN" Type="varchar" MaxLength="50" />
+          <Property Name="RECEIPT_NO_1" Type="varchar" MaxLength="50" />
+          <Property Name="RECEIPT_NO_2" Type="varchar" MaxLength="50" />
+          <Property Name="NOTES" Type="varchar" MaxLength="50" />
+          <Property Name="STAT" Type="varchar" MaxLength="50" />
+          <Property Name="UESER_NAME" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="DISMISSAL_AGENCY">
+          <Key>
+            <PropertyRef Name="NO" />
+          </Key>
+          <Property Name="NO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CODE" Type="varchar" MaxLength="50" />
+          <Property Name="DATE" Type="date" />
+          <Property Name="AGENCY_CODE" Type="varchar" MaxLength="50" />
+          <Property Name="DATE_TODAY" Type="datetime" />
+          <Property Name="USER_NAME" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="FA_COMPANY">
+          <Key>
+            <PropertyRef Name="CODE" />
+          </Key>
+          <Property Name="CODE" Type="int" Nullable="false" />
+          <Property Name="ADESC" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="FA_COMPANY2">
+          <Key>
+            <PropertyRef Name="CODE" />
+          </Key>
+          <Property Name="CODE" Type="int" Nullable="false" />
+          <Property Name="ADESC" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="FEES">
+          <Key>
+            <PropertyRef Name="ADESC" />
+          </Key>
+          <Property Name="ADESC" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="VAL_1" Type="varchar" MaxLength="50" />
+          <Property Name="VAL_2" Type="varchar" MaxLength="50" />
+          <Property Name="VAL_3" Type="varchar" MaxLength="50" />
+          <Property Name="VAL_4" Type="varchar" MaxLength="50" />
+          <Property Name="VAL_5" Type="varchar" MaxLength="50" />
+          <Property Name="VAL_6" Type="varchar" MaxLength="50" />
+          <Property Name="VAL_7" Type="varchar" MaxLength="50" />
+          <Property Name="VAL_8" Type="varchar" MaxLength="50" />
+          <Property Name="TOTAL" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="FORGED_AGENCY">
+          <Key>
+            <PropertyRef Name="NO" />
+          </Key>
+          <Property Name="NO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CODE" Type="varchar" MaxLength="50" />
+          <Property Name="DATE" Type="date" />
+          <Property Name="AGENCY_CODE" Type="varchar" MaxLength="50" />
+          <Property Name="DATE_TODAY" Type="datetime" />
+          <Property Name="USER_NAME" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="NUM_RECORD">
+          <Key>
+            <PropertyRef Name="CODE" />
+          </Key>
+          <Property Name="CODE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SALESMAN" Type="varchar" MaxLength="50" />
+          <Property Name="DATE" Type="datetime" />
+        </EntityType>
+        <EntityType Name="PRINT_LOG">
+          <Key>
+            <PropertyRef Name="CODE" />
+          </Key>
+          <Property Name="CODE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DATE" Type="date" />
+          <Property Name="TYPE_PRINT" Type="varchar" MaxLength="50" />
+          <Property Name="CODE_AG" Type="varchar" MaxLength="50" />
+          <Property Name="DATE_AG" Type="varchar" MaxLength="50" />
+          <Property Name="SN_AG" Type="varchar" MaxLength="50" />
+          <Property Name="REG_AG" Type="varchar" MaxLength="50" />
+          <Property Name="NAME_AG" Type="varchar" MaxLength="50" />
+          <Property Name="TYPE_AG" Type="varchar" MaxLength="50" />
+          <Property Name="EDITOR_AG" Type="varchar" MaxLength="50" />
+          <Property Name="SALESMAN_AG" Type="varchar" MaxLength="50" />
+          <Property Name="NOTES" Type="varchar" MaxLength="200" />
+          <Property Name="WITHOUT_TAX" Type="varchar" MaxLength="50" />
+          <Property Name="VAL_1" Type="varchar" MaxLength="50" />
+          <Property Name="VAL_2" Type="varchar" MaxLength="50" />
+          <Property Name="VAL_3" Type="varchar" MaxLength="50" />
+          <Property Name="VAL_4" Type="varchar" MaxLength="50" />
+          <Property Name="VAL_5" Type="varchar" MaxLength="50" />
+          <Property Name="VAL_6" Type="varchar" MaxLength="50" />
+          <Property Name="VAL_7" Type="varchar" MaxLength="50" />
+          <Property Name="VAL_8" Type="varchar" MaxLength="50" />
+          <Property Name="VAL_9" Type="varchar" MaxLength="50" />
+          <Property Name="ARCHIVE" Type="varchar" MaxLength="50" />
+          <Property Name="SECURITY_NO" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="RETIREMENT_AGENCY">
+          <Key>
+            <PropertyRef Name="NO" />
+          </Key>
+          <Property Name="NO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CODE" Type="varchar" MaxLength="50" />
+          <Property Name="DATE" Type="date" />
+          <Property Name="AGENCY_CODE" Type="varchar" MaxLength="50" />
+          <Property Name="DATE_TODAY" Type="datetime" />
+          <Property Name="USER_NAME" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="USERS">
+          <Key>
+            <PropertyRef Name="USER_NAME" />
+          </Key>
+          <Property Name="USER_NAME" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CODE" Type="int" />
+          <Property Name="PASSWORD" Type="varchar" MaxLength="50" />
+          <Property Name="DISCOUNT" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="Syrian_Bar_DBModelStoreContainer">
+          <EntitySet Name="AGENCY" EntityType="Self.AGENCY" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BLOCK_AGENCY" EntityType="Self.BLOCK_AGENCY" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CONTRACT_COMPANY" EntityType="Self.CONTRACT_COMPANY" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DISMISSAL_AGENCY" EntityType="Self.DISMISSAL_AGENCY" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FA_COMPANY" EntityType="Self.FA_COMPANY" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FA_COMPANY2" EntityType="Self.FA_COMPANY2" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FEES" EntityType="Self.FEES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FORGED_AGENCY" EntityType="Self.FORGED_AGENCY" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NUM_RECORD" EntityType="Self.NUM_RECORD" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PRINT_LOG" EntityType="Self.PRINT_LOG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RETIREMENT_AGENCY" EntityType="Self.RETIREMENT_AGENCY" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="USERS" EntityType="Self.USERS" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Syrian_Bar_DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AGENCY">
+          <Key>
+            <PropertyRef Name="CODE" />
+          </Key>
+          <Property Name="CODE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SERIAL_NUMBER" Type="Int32" />
+          <Property Name="REG_NUM" Type="Int32" />
+          <Property Name="ENTRUSTED_NAME_1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ENTRUSTED_NAME_2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ENTRUSTED_NAME_3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ENTRUSTED_NAME_4" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ENTRUSTED_NAME_5" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AGENT_NAME_1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AGENT_NAME_2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AGENT_NAME_3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AGENT_NAME_4" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AGENT_NAME_5" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SALES_MAN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AGENCY_DATE" Type="DateTime" Precision="0" />
+          <Property Name="IMAGE" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="STAT" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="EDITOR" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UESER_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TYPE_2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SECURITY_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DATE_CREATED" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="BLOCK_AGENCY">
+          <Key>
+            <PropertyRef Name="NO" />
+          </Key>
+          <Property Name="NO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DATE" Type="DateTime" Precision="0" />
+          <Property Name="AGENCY_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DATE_TODAY" Type="DateTime" Precision="3" />
+          <Property Name="USER_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="CONTRACT_COMPANY">
+          <Key>
+            <PropertyRef Name="CODE" />
+          </Key>
+          <Property Name="CODE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DATE" Type="DateTime" Precision="0" />
+          <Property Name="TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ENTRUSTED_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EDITOR" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SALES_MAN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RECEIPT_NO_1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RECEIPT_NO_2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NOTES" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="STAT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UESER_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="DISMISSAL_AGENCY">
+          <Key>
+            <PropertyRef Name="NO" />
+          </Key>
+          <Property Name="NO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DATE" Type="DateTime" Precision="0" />
+          <Property Name="AGENCY_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DATE_TODAY" Type="DateTime" Precision="3" />
+          <Property Name="USER_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="FA_COMPANY">
+          <Key>
+            <PropertyRef Name="CODE" />
+          </Key>
+          <Property Name="CODE" Type="Int32" Nullable="false" />
+          <Property Name="ADESC" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="FA_COMPANY2">
+          <Key>
+            <PropertyRef Name="CODE" />
+          </Key>
+          <Property Name="CODE" Type="Int32" Nullable="false" />
+          <Property Name="ADESC" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="FEES">
+          <Key>
+            <PropertyRef Name="ADESC" />
+          </Key>
+          <Property Name="ADESC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="VAL_1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VAL_2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VAL_3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VAL_4" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VAL_5" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VAL_6" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VAL_7" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VAL_8" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TOTAL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="FORGED_AGENCY">
+          <Key>
+            <PropertyRef Name="NO" />
+          </Key>
+          <Property Name="NO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DATE" Type="DateTime" Precision="0" />
+          <Property Name="AGENCY_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DATE_TODAY" Type="DateTime" Precision="3" />
+          <Property Name="USER_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="NUM_RECORD">
+          <Key>
+            <PropertyRef Name="CODE" />
+          </Key>
+          <Property Name="CODE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SALESMAN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DATE" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="PRINT_LOG">
+          <Key>
+            <PropertyRef Name="CODE" />
+          </Key>
+          <Property Name="CODE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DATE" Type="DateTime" Precision="0" />
+          <Property Name="TYPE_PRINT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CODE_AG" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DATE_AG" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SN_AG" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="REG_AG" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NAME_AG" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TYPE_AG" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EDITOR_AG" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SALESMAN_AG" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NOTES" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="WITHOUT_TAX" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VAL_1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VAL_2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VAL_3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VAL_4" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VAL_5" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VAL_6" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VAL_7" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VAL_8" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VAL_9" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ARCHIVE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SECURITY_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="RETIREMENT_AGENCY">
+          <Key>
+            <PropertyRef Name="NO" />
+          </Key>
+          <Property Name="NO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DATE" Type="DateTime" Precision="0" />
+          <Property Name="AGENCY_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DATE_TODAY" Type="DateTime" Precision="3" />
+          <Property Name="USER_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="USERS">
+          <Key>
+            <PropertyRef Name="USER_NAME" />
+          </Key>
+          <Property Name="USER_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CODE" Type="Int32" />
+          <Property Name="PASSWORD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DISCOUNT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="Syrian_Bar_DBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AGENCY" EntityType="Self.AGENCY" />
+          <EntitySet Name="BLOCK_AGENCY" EntityType="Self.BLOCK_AGENCY" />
+          <EntitySet Name="CONTRACT_COMPANY" EntityType="Self.CONTRACT_COMPANY" />
+          <EntitySet Name="DISMISSAL_AGENCY" EntityType="Self.DISMISSAL_AGENCY" />
+          <EntitySet Name="FA_COMPANY" EntityType="Self.FA_COMPANY" />
+          <EntitySet Name="FA_COMPANY2" EntityType="Self.FA_COMPANY2" />
+          <EntitySet Name="FEES" EntityType="Self.FEES" />
+          <EntitySet Name="FORGED_AGENCY" EntityType="Self.FORGED_AGENCY" />
+          <EntitySet Name="NUM_RECORD" EntityType="Self.NUM_RECORD" />
+          <EntitySet Name="PRINT_LOG" EntityType="Self.PRINT_LOG" />
+          <EntitySet Name="RETIREMENT_AGENCY" EntityType="Self.RETIREMENT_AGENCY" />
+          <EntitySet Name="USERS" EntityType="Self.USERS" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Syrian_Bar_DBModelStoreContainer" CdmEntityContainer="Syrian_Bar_DBEntities">
+          <EntitySetMapping Name="AGENCY">
+            <EntityTypeMapping TypeName="Syrian_Bar_DBModel.AGENCY">
+              <MappingFragment StoreEntitySet="AGENCY">
+                <ScalarProperty Name="CODE" ColumnName="CODE" />
+                <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+                <ScalarProperty Name="SERIAL_NUMBER" ColumnName="SERIAL_NUMBER" />
+                <ScalarProperty Name="REG_NUM" ColumnName="REG_NUM" />
+                <ScalarProperty Name="ENTRUSTED_NAME_1" ColumnName="ENTRUSTED_NAME_1" />
+                <ScalarProperty Name="ENTRUSTED_NAME_2" ColumnName="ENTRUSTED_NAME_2" />
+                <ScalarProperty Name="ENTRUSTED_NAME_3" ColumnName="ENTRUSTED_NAME_3" />
+                <ScalarProperty Name="ENTRUSTED_NAME_4" ColumnName="ENTRUSTED_NAME_4" />
+                <ScalarProperty Name="ENTRUSTED_NAME_5" ColumnName="ENTRUSTED_NAME_5" />
+                <ScalarProperty Name="AGENT_NAME_1" ColumnName="AGENT_NAME_1" />
+                <ScalarProperty Name="AGENT_NAME_2" ColumnName="AGENT_NAME_2" />
+                <ScalarProperty Name="AGENT_NAME_3" ColumnName="AGENT_NAME_3" />
+                <ScalarProperty Name="AGENT_NAME_4" ColumnName="AGENT_NAME_4" />
+                <ScalarProperty Name="AGENT_NAME_5" ColumnName="AGENT_NAME_5" />
+                <ScalarProperty Name="SALES_MAN" ColumnName="SALES_MAN" />
+                <ScalarProperty Name="AGENCY_DATE" ColumnName="AGENCY_DATE" />
+                <ScalarProperty Name="IMAGE" ColumnName="IMAGE" />
+                <ScalarProperty Name="STAT" ColumnName="STAT" />
+                <ScalarProperty Name="EDITOR" ColumnName="EDITOR" />
+                <ScalarProperty Name="UESER_NAME" ColumnName="UESER_NAME" />
+                <ScalarProperty Name="TYPE_2" ColumnName="TYPE_2" />
+                <ScalarProperty Name="SECURITY_NO" ColumnName="SECURITY_NO" />
+                <ScalarProperty Name="DATE_CREATED" ColumnName="DATE_CREATED" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BLOCK_AGENCY">
+            <EntityTypeMapping TypeName="Syrian_Bar_DBModel.BLOCK_AGENCY">
+              <MappingFragment StoreEntitySet="BLOCK_AGENCY">
+                <ScalarProperty Name="NO" ColumnName="NO" />
+                <ScalarProperty Name="CODE" ColumnName="CODE" />
+                <ScalarProperty Name="DATE" ColumnName="DATE" />
+                <ScalarProperty Name="AGENCY_CODE" ColumnName="AGENCY_CODE" />
+                <ScalarProperty Name="DATE_TODAY" ColumnName="DATE_TODAY" />
+                <ScalarProperty Name="USER_NAME" ColumnName="USER_NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CONTRACT_COMPANY">
+            <EntityTypeMapping TypeName="Syrian_Bar_DBModel.CONTRACT_COMPANY">
+              <MappingFragment StoreEntitySet="CONTRACT_COMPANY">
+                <ScalarProperty Name="CODE" ColumnName="CODE" />
+                <ScalarProperty Name="DATE" ColumnName="DATE" />
+                <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+                <ScalarProperty Name="ENTRUSTED_NAME" ColumnName="ENTRUSTED_NAME" />
+                <ScalarProperty Name="EDITOR" ColumnName="EDITOR" />
+                <ScalarProperty Name="SALES_MAN" ColumnName="SALES_MAN" />
+                <ScalarProperty Name="RECEIPT_NO_1" ColumnName="RECEIPT_NO_1" />
+                <ScalarProperty Name="RECEIPT_NO_2" ColumnName="RECEIPT_NO_2" />
+                <ScalarProperty Name="NOTES" ColumnName="NOTES" />
+                <ScalarProperty Name="STAT" ColumnName="STAT" />
+                <ScalarProperty Name="UESER_NAME" ColumnName="UESER_NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DISMISSAL_AGENCY">
+            <EntityTypeMapping TypeName="Syrian_Bar_DBModel.DISMISSAL_AGENCY">
+              <MappingFragment StoreEntitySet="DISMISSAL_AGENCY">
+                <ScalarProperty Name="NO" ColumnName="NO" />
+                <ScalarProperty Name="CODE" ColumnName="CODE" />
+                <ScalarProperty Name="DATE" ColumnName="DATE" />
+                <ScalarProperty Name="AGENCY_CODE" ColumnName="AGENCY_CODE" />
+                <ScalarProperty Name="DATE_TODAY" ColumnName="DATE_TODAY" />
+                <ScalarProperty Name="USER_NAME" ColumnName="USER_NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FA_COMPANY">
+            <EntityTypeMapping TypeName="Syrian_Bar_DBModel.FA_COMPANY">
+              <MappingFragment StoreEntitySet="FA_COMPANY">
+                <ScalarProperty Name="CODE" ColumnName="CODE" />
+                <ScalarProperty Name="ADESC" ColumnName="ADESC" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FA_COMPANY2">
+            <EntityTypeMapping TypeName="Syrian_Bar_DBModel.FA_COMPANY2">
+              <MappingFragment StoreEntitySet="FA_COMPANY2">
+                <ScalarProperty Name="CODE" ColumnName="CODE" />
+                <ScalarProperty Name="ADESC" ColumnName="ADESC" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FEES">
+            <EntityTypeMapping TypeName="Syrian_Bar_DBModel.FEES">
+              <MappingFragment StoreEntitySet="FEES">
+                <ScalarProperty Name="ADESC" ColumnName="ADESC" />
+                <ScalarProperty Name="VAL_1" ColumnName="VAL_1" />
+                <ScalarProperty Name="VAL_2" ColumnName="VAL_2" />
+                <ScalarProperty Name="VAL_3" ColumnName="VAL_3" />
+                <ScalarProperty Name="VAL_4" ColumnName="VAL_4" />
+                <ScalarProperty Name="VAL_5" ColumnName="VAL_5" />
+                <ScalarProperty Name="VAL_6" ColumnName="VAL_6" />
+                <ScalarProperty Name="VAL_7" ColumnName="VAL_7" />
+                <ScalarProperty Name="VAL_8" ColumnName="VAL_8" />
+                <ScalarProperty Name="TOTAL" ColumnName="TOTAL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FORGED_AGENCY">
+            <EntityTypeMapping TypeName="Syrian_Bar_DBModel.FORGED_AGENCY">
+              <MappingFragment StoreEntitySet="FORGED_AGENCY">
+                <ScalarProperty Name="NO" ColumnName="NO" />
+                <ScalarProperty Name="CODE" ColumnName="CODE" />
+                <ScalarProperty Name="DATE" ColumnName="DATE" />
+                <ScalarProperty Name="AGENCY_CODE" ColumnName="AGENCY_CODE" />
+                <ScalarProperty Name="DATE_TODAY" ColumnName="DATE_TODAY" />
+                <ScalarProperty Name="USER_NAME" ColumnName="USER_NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NUM_RECORD">
+            <EntityTypeMapping TypeName="Syrian_Bar_DBModel.NUM_RECORD">
+              <MappingFragment StoreEntitySet="NUM_RECORD">
+                <ScalarProperty Name="CODE" ColumnName="CODE" />
+                <ScalarProperty Name="SALESMAN" ColumnName="SALESMAN" />
+                <ScalarProperty Name="DATE" ColumnName="DATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PRINT_LOG">
+            <EntityTypeMapping TypeName="Syrian_Bar_DBModel.PRINT_LOG">
+              <MappingFragment StoreEntitySet="PRINT_LOG">
+                <ScalarProperty Name="CODE" ColumnName="CODE" />
+                <ScalarProperty Name="DATE" ColumnName="DATE" />
+                <ScalarProperty Name="TYPE_PRINT" ColumnName="TYPE_PRINT" />
+                <ScalarProperty Name="CODE_AG" ColumnName="CODE_AG" />
+                <ScalarProperty Name="DATE_AG" ColumnName="DATE_AG" />
+                <ScalarProperty Name="SN_AG" ColumnName="SN_AG" />
+                <ScalarProperty Name="REG_AG" ColumnName="REG_AG" />
+                <ScalarProperty Name="NAME_AG" ColumnName="NAME_AG" />
+                <ScalarProperty Name="TYPE_AG" ColumnName="TYPE_AG" />
+                <ScalarProperty Name="EDITOR_AG" ColumnName="EDITOR_AG" />
+                <ScalarProperty Name="SALESMAN_AG" ColumnName="SALESMAN_AG" />
+                <ScalarProperty Name="NOTES" ColumnName="NOTES" />
+                <ScalarProperty Name="WITHOUT_TAX" ColumnName="WITHOUT_TAX" />
+                <ScalarProperty Name="VAL_1" ColumnName="VAL_1" />
+                <ScalarProperty Name="VAL_2" ColumnName="VAL_2" />
+                <ScalarProperty Name="VAL_3" ColumnName="VAL_3" />
+                <ScalarProperty Name="VAL_4" ColumnName="VAL_4" />
+                <ScalarProperty Name="VAL_5" ColumnName="VAL_5" />
+                <ScalarProperty Name="VAL_6" ColumnName="VAL_6" />
+                <ScalarProperty Name="VAL_7" ColumnName="VAL_7" />
+                <ScalarProperty Name="VAL_8" ColumnName="VAL_8" />
+                <ScalarProperty Name="VAL_9" ColumnName="VAL_9" />
+                <ScalarProperty Name="ARCHIVE" ColumnName="ARCHIVE" />
+                <ScalarProperty Name="SECURITY_NO" ColumnName="SECURITY_NO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RETIREMENT_AGENCY">
+            <EntityTypeMapping TypeName="Syrian_Bar_DBModel.RETIREMENT_AGENCY">
+              <MappingFragment StoreEntitySet="RETIREMENT_AGENCY">
+                <ScalarProperty Name="NO" ColumnName="NO" />
+                <ScalarProperty Name="CODE" ColumnName="CODE" />
+                <ScalarProperty Name="DATE" ColumnName="DATE" />
+                <ScalarProperty Name="AGENCY_CODE" ColumnName="AGENCY_CODE" />
+                <ScalarProperty Name="DATE_TODAY" ColumnName="DATE_TODAY" />
+                <ScalarProperty Name="USER_NAME" ColumnName="USER_NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="USERS">
+            <EntityTypeMapping TypeName="Syrian_Bar_DBModel.USERS">
+              <MappingFragment StoreEntitySet="USERS">
+                <ScalarProperty Name="USER_NAME" ColumnName="USER_NAME" />
+                <ScalarProperty Name="CODE" ColumnName="CODE" />
+                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+                <ScalarProperty Name="DISCOUNT" ColumnName="DISCOUNT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
